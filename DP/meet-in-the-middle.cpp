@@ -1,12 +1,11 @@
 vector<int> sums(vector<int> &a) {
     int n = a.size();
-    vector<int> s;
-    for (int i = 0; i < (1 << n); i++) {
-        int sm = 0;
-        for (int j = 0; j < n; j++) {
-            if (i & (1 << j)) sm = add(sm, a[j]);
+    vector<int> s = {0};
+    for (int i = 0; i < n; i++) {
+        int k = s.size();
+        for (int j = 0; j < k; j++) {
+            s.pb(add(s[j], a[i]));
         }
-        s.pb(sm);
     }
     sort(s.begin(), s.end());
     return s;
