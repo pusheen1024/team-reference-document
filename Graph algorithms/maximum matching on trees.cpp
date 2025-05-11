@@ -1,15 +1,12 @@
 ptt dp[N][2];
-
 ptt best(ptt x, ptt y) {
     if (x.first > y.first) return x;
     else if (y.first > x.first) return y;
     else return {x.first, add(x.second, y.second)};
 }
-
 ptt merge(ptt x, ptt y) {
     return {x.first + y.first, mul(x.second, y.second)};
 }
-
 void dfs(int v, int p, vector<vector<int>> &g) {
     vector<ptt> dp0;
     vector<ptt> dp1;

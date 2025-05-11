@@ -1,5 +1,4 @@
 mt19937 rnd(time(NULL));
-
 struct Node {
     int x;
     int y;
@@ -9,7 +8,6 @@ struct Node {
     Node* r;
     Node() {};
 };
-
 typedef Node* treap;
 typedef pair<treap, treap> ptt;
 
@@ -23,26 +21,21 @@ treap newNode(int x, int y, int sz, Node* l, Node* r) {
     t->r = r;
     return t;
 }
-
 treap createNode(int x) {
     return newNode(x, rnd(), 1, NULL, NULL);
 }
-
 int getSize(treap t) {
     if (! t) return 0;
     return t->sz;
 }
-
 treap fix (treap t) {
     if (t) t->sz = 1 + getSize(t->l) + getSize(t->r);
     return t;
 }
-
 treap rev(treap t) {
     if (t) t->rev ^= 1;
     return t;
 }
-
 treap push(treap t) {
     if (! t) return t;
     if (t->rev) {
@@ -53,7 +46,6 @@ treap push(treap t) {
     }
     return fix(t);
 }
-
 treap merge(treap a, treap b) {
     if (! a) return b;
     if (! b) return a;
@@ -68,7 +60,6 @@ treap merge(treap a, treap b) {
         return fix(b);
     }
 }
-
 ptt splitK(treap t, int k) {
     if (getSize(t) <= k) return {t, NULL};
     if (k == 0) return {NULL, t};
@@ -85,7 +76,6 @@ ptt splitK(treap t, int k) {
         return {p.first, fix(t)};
     }
 }
-
 treap revSeg(treap t, int l, int r) {
     ptt p = splitK(t, l);
     ptt q = splitK(p.second, r - l);
@@ -93,7 +83,6 @@ treap revSeg(treap t, int l, int r) {
     t = merge(p.first, merge(q.first, q.second));
     return fix(t);
 }
-
 treap shift(treap t, int l, int r) {
     ptt p = splitK(t, l);
     ptt q = splitK(p.second, r - l);
@@ -103,13 +92,11 @@ treap shift(treap t, int l, int r) {
     t = merge(merge(p.first, seg), q.second);
     return fix(t);
 }
-
 treap createfromVector(const vector<int> &a) {
     treap t = NULL;
     for (auto x: a) t = merge(t, createNode(x));
     return t;
 }
-
 void getVector(treap t, vector<int> &a) {
     if (! t) return;
     t = push(t);

@@ -3,18 +3,15 @@ class Edge:
         self.to = to
         self.w = w
         self.f = f
-
-        
+       
 def add_edge(fr, to, w):
     g[fr].append(len(e))
     e.append(Edge(to, w, 0))
     g[to].append(len(e))
     e.append(Edge(fr, 0, 0))
 
-
 def rem(edge):
     return edge.w - edge.f
-
 
 def dfs(v, f, k):
     if used[v]:
@@ -33,7 +30,6 @@ def dfs(v, f, k):
             e[idx ^ 1].f -= pushed
             return pushed
     return 0
-
 
 S = 0
 T = n - 1

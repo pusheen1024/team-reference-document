@@ -2,7 +2,6 @@ int up[N][lg];
 int min_up[N][lg];
 int tin[N], tout[N];
 int t = 0;
-
 void dfs(int v, int p, int w, vector<vector<ptt>> &g) {
     tin[v] = t++;
     for (ptt e : g[v]) {
@@ -20,11 +19,9 @@ void dfs(int v, int p, int w, vector<vector<ptt>> &g) {
     }
     tout[v] = t;
 }
-
 bool is_ancestor(int v, int u) {
     return (tin[v] <= tin[u] && tout[v] >= tout[u]);
 }
-
 int lca(int v, int u) {
     if (is_ancestor(v, u)) return v;
     if (is_ancestor(u, v)) return u;
@@ -36,7 +33,6 @@ int lca(int v, int u) {
     }
     return up[cur][0];
 }
-
 int min_vert(int v, int u) {
     if (v == u) return INF;
     int ans = INF;
@@ -49,14 +45,12 @@ int min_vert(int v, int u) {
     }
     return min(min_up[cur][0], ans);
 }
-
 int min_path(int v, int u) {
     if (is_ancestor(v, u)) return min_vert(u, v);
     if (is_ancestor(u, v)) return min_vert(v, u);
     int lc = lca(v, u);
     return min(min_vert(v, lc), min_vert(u, lc));
 }
-
 int dist(int v, int u) {
     return d[v] + d[u] - 2 * d[lca(v, u)];
 }

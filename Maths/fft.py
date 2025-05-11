@@ -1,5 +1,4 @@
-from math import pi, e, log
- 
+from math import pi, e, log 
  
 def FFT(P, inverse=0):
     n = len(P)

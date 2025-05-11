@@ -1,5 +1,4 @@
 int mt[N];
-
 bool dfs(int v, vector<vector<int>>& g) {
     if (used[v]) return false;
     used[v] = true;
@@ -11,7 +10,6 @@ bool dfs(int v, vector<vector<int>>& g) {
     }
     return false;
 }
-
 void path_cover() {
     for (int i = 0; i < N; i++) mt[i] = -1;
     for (int i = 0; i < n; i++) {
@@ -39,7 +37,6 @@ void path_cover() {
         }
     }
 }
-
 void edge_cover() {
     for (int i = 0; i < N; i++) mt[i] = -1;
     for (int i = 0; i < n; i++) {

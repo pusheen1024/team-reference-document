@@ -14,27 +14,23 @@ bool dfs(int v, vector<vector<int>> &g, vector<int> &used, vector<int> &p, int &
     used[v] = 2;
     return false;
 }
-
 void solve() {
     int c_st = -1, c_end = -1;
     for (int i = 0; i < n; i++) {
-        if (! used[i]) {
-            dfs(i, g, used, p, c_st, c_end);
-            if (c_st != -1) {
-                vector<int> cycle;
-                while (c_end != c_st) {
-                    cycle.push_back(c_end);
-                    c_end = p[c_end];
-                }
+        if (used[i]) continue;
+        dfs(i, g, used, p, c_st, c_end);
+        if (c_st != -1) {
+            vector<int> cycle;
+            while (c_end != c_st) {
                 cycle.push_back(c_end);
-                cout << "NO" << '\n';
-                reverse(cycle.begin(), cycle.end());
-                cout << cycle.size() << '\n';
-                for (int x: cycle) cout << x + 1 << ' ';
-                cout << c_end + 1 << '\n';
-                return;
+                c_end = p[c_end];
             }
+            cycle.push_back(c_end);
+            reverse(cycle.begin(), cycle.end());
+            cout << cycle.size() << '\n';
+            for (int x: cycle) cout << x + 1 << ' ';
+            cout << c_end + 1 << '\n';
+            return;
         }
     }
-    cout << "YES" << '\n';
 }

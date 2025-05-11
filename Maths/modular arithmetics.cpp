@@ -1,16 +1,12 @@
-const int M = 998244353;
-
 int add(int x, int y) {
 	x += y;
 	while (x >= M) x -= M;
 	while (x < 0) x += M;
 	return x;
 }
-
 int mul(int x, int y) {
 	return (x * 1ll * y) % M;
 }
-
 int mod_pow(int base, int n) {
 	int ans = 1;
 	while (n != 0) {
@@ -20,7 +16,6 @@ int mod_pow(int base, int n) {
 	}
 	return ans;
 }
-
 int gcd_(li x, li y) {
 	while (x != 0 && y != 0) {
 		if (x > y) swap(x, y);
@@ -28,7 +23,6 @@ int gcd_(li x, li y) {
 	}
 	return x + y;
 }
-
 int exgcd(int a, int b, li& x1, li& y1) {
 	if (b == 0) {
 		x1 = 1;
@@ -41,7 +35,6 @@ int exgcd(int a, int b, li& x1, li& y1) {
 	y1 = x - (a / b) * y;
 	return d;
 }
-
 void solve_diofantine() {
 	int a, b, c;
 	cin >> a >> b >> c;

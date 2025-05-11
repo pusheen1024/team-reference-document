@@ -1,5 +1,4 @@
 const int K = 2;
-
 typedef array<int, K> vec;
 typedef array<vec, K> mtx;
 
@@ -19,7 +18,6 @@ mtx mul(const mtx &a, const mtx &b) {
     }
     return res;
 }
-
 vec mul(const mtx &a, const vec &b) {
     vec res;
     for (int i = 0; i < K; i++) {
@@ -32,7 +30,6 @@ vec mul(const mtx &a, const vec &b) {
     }
     return res;
 }
-
 mtx unit() {
     mtx res;
     for (int i = 0; i < K; i++) {
@@ -42,7 +39,6 @@ mtx unit() {
     }
     return res;
 }
-
 mtx binpow(const mtx &a, li n) {
     mtx ans = unit();
     mtx base = a;
@@ -53,7 +49,6 @@ mtx binpow(const mtx &a, li n) {
     }
     return ans;
 }
-
 void solve() { // n-th fibonacci number
     li n;
     cin >> n;

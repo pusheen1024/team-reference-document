@@ -10,7 +10,6 @@ vector<int> sums(vector<int> &a) {
     sort(s.begin(), s.end());
     return s;
 }
-
 void solve() {
     int n;
     cin >> n >> M;

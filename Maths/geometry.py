@@ -2,7 +2,6 @@ from functools import total_ordering
 from math import atan2, pi
 EPS = 10 ** (-9)
 
-
 @total_ordering
 class Point:
     def __init__(self, x, y):
@@ -17,8 +16,7 @@ class Point:
  
     def __repr__(self):
         return f'{self.x} {self.y}'
- 
- 
+  
 class Line:
     def __init__(self, a, b):
         self.a = a.y - b.y
@@ -34,13 +32,11 @@ class Line:
     def dist(self, point):
         return abs(self.a * point.x + self.b * point.y + self.c) / ((self.a ** 2 + self.b ** 2) ** 0.5)
  
- 
 class LineCoeff(Line):
     def __init__(self, a, b, c):
         self.a = a
         self.b = b
-        self.c = c
-        
+        self.c = c        
         
 @total_ordering
 class Vector:
@@ -77,7 +73,6 @@ class Vector:
     def length(self):
         return (self.x ** 2 + self.y ** 2) ** 0.5
  
- 
 class Segment:
     def __init__(self, a, b):
         self.line = Line(a, b)
@@ -110,7 +105,6 @@ class Segment:
             return point
         return False
  
- 
 class Circle:
     def __init__(self, x, y, r):
         self.x = x
@@ -124,12 +118,10 @@ class Circle:
         return (self.x - p.x) ** 2 + (self.y - p.y) ** 2 <= self.r ** 2 + EPS
  
     def inside(self, circle):
-        return (self.x - circle.x) ** 2 + (self.y - circle.y) ** 2 <= (self.r - circle.r) ** 2 + EPS
- 
+        return (self.x - circle.x) ** 2 + (self.y - circle.y) ** 2 <= (self.r - circle.r) ** 2 + EPS 
  
 def det(a, b, c, d):
     return a * d - b * c
- 
  
 def intersects(line1, line2):
     D = det(line1.a, line1.b, line2.a, line2.b)
@@ -139,18 +131,14 @@ def intersects(line1, line2):
     D2 = det(line1.a, line1.c, line2.a, line2.c)
     return Point(-D1 / D, -D2 / D)
  
- 
 def dist(point1, point2):
     return ((point2.x - point1.x) ** 2 + (point2.y - point1.y) ** 2) ** 0.5
- 
  
 def cw(a, b, c):
     return Vector(b, a) * Vector(b, c) < 0
  
- 
 def ccw(a, b, c):
     return Vector(b, a) * Vector(b, c) > 0
- 
  
 def convex_hull(points):
     p = sorted(points)
@@ -170,7 +158,6 @@ def convex_hull(points):
             down.append(p[i])
     return down + up[1:-1][::-1]
  
- 
 def intersects_c_l(circle, line, dx, dy):
     sq = line.a ** 2 + line.b ** 2
     if sq == 0:
@@ -187,7 +174,6 @@ def intersects_c_l(circle, line, dx, dy):
     P = Point(x0 + line.b * mult + dx, y0 - line.a * mult + dy)
     Q = Point(x0 - line.b * mult + dx, y0 + line.a * mult + dy)
     return [P, Q]
- 
  
 def intersects_c_c(circle1, circle2):
     circle2.x -= circle1.x

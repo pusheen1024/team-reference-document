@@ -3,16 +3,13 @@ struct node {
     int term;
     node() {};
 };
-
 node trie[N];
 int sz = 0;
-
 int new_node() {
     trie[sz].go.clear();
     trie[sz].term = -1;
     return sz++;
 }
-
 void add_string(string s, int i) {
     int cur = 0;
     for (char c : s) {
@@ -23,7 +20,6 @@ void add_string(string s, int i) {
     }
     trie[cur].term = i;
 }
-
 int find(string t) {
     int cur = 0;
     for (char c : t) {

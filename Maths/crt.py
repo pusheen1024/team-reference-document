@@ -1,5 +1,4 @@
 def CRT(a, m):
-    # receives array a[] and array m[]
     # returns x such that x % m[i] == a[i]
     n = len(a)
     M = 1

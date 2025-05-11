@@ -1,7 +1,6 @@
 bool used[N];
 int mt[N], mt_left[N];
 vector<int> g[N];
-
 bool kuhn(int x) {
     if (used[x]) return false;
     used[x] = true;
@@ -19,7 +18,6 @@ bool kuhn(int x) {
         }
     return false;
 }
-
 void max_matching() {
     for (int i = 0; i < n1; i++)
         mt_left[i] = -1;
