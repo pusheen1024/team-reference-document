@@ -1,7 +1,7 @@
 ld l = 0;
 ld r = INF;
 for (int i = 0; i < 60; i++) {
-    float m = (l + r) / 2;
+    ld m = (l + r) / 2;
     if (f(m) < ans)
         l = m;
     else
