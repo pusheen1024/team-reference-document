@@ -17,6 +17,3 @@ void log_trick(vector<int> &w, vector<int> &c) {
 		}
 	}
 }
-
-
-

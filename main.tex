@@ -1,0 +1,136 @@
+﻿\documentclass[10pt,twocolumn,oneside]{article}
+\usepackage{preamble}
+
+\begin{document}
+
+\section{Data structures}
+\subsection{Treap (with segment updates)}
+\inputminted[breaklines]{cpp}{Data structures/treap (segment updates).cpp}
+\subsection{Treap (as a binary search tree)}
+\inputminted[breaklines]{cpp}{Data structures/treap (as a binsearch tree).cpp}
+\subsection{Segment tree}
+\inputminted[breaklines]{cpp}{Data structures/segment tree.cpp}
+\subsection{Sparse table}
+\inputminted[breaklines]{cpp}{Data structures/sparse table.cpp}
+\subsection{DSU}
+\inputminted[breaklines]{cpp}{Data structures/dsu.cpp}
+\subsection{Priority queue}
+\inputminted[breaklines]{python}{Data structures/priority queue.py}
+
+\section{String algorithms}
+\subsection{Trie}
+\inputminted[breaklines]{cpp}{String algorithms/trie.cpp}
+\subsection{String hashing}
+\inputminted[breaklines]{cpp}{String algorithms/string hashing.cpp}
+\subsection{KMP}
+\inputminted[breaklines]{python}{String algorithms/kmp.py}
+\subsection{Prefix function}
+\inputminted[breaklines]{python}{String algorithms/prefix-function.py}
+\subsection{Z"=function}
+\inputminted[breaklines]{python}{String algorithms/z-function.py}
+
+\section{Graph algorithms}
+\subsection{BFS}
+\inputminted[breaklines]{cpp}{Graph algorithms/bfs.cpp}
+\subsection{Djikstra}
+\inputminted[breaklines]{cpp}{Graph algorithms/djikstra.cpp}
+\subsection{Floyd}
+\inputminted[breaklines]{cpp}{Graph algorithms/floyd.cpp}
+\subsection{Ford"=Bellman}
+\inputminted[breaklines]{python}{Graph algorithms/ford-bellman.py}
+После n"=ной итерации что"=то изменилось $\Rightarrow$ существует цикл отрицательного веса.
+\subsection{Cycle in directed graph}
+\inputminted[breaklines]{cpp}{Graph algorithms/cycle in directed graph.cpp}
+\subsection{Strongly connected components}
+\inputminted[breaklines]{cpp}{Graph algorithms/strongly connected components.cpp}
+\subsection{Bridges}
+\inputminted[breaklines]{cpp}{Graph algorithms/bridges.cpp}
+\subsection{Articulation points}
+\inputminted[breaklines]{cpp}{Graph algorithms/articulation points.cpp}
+\subsection{Binary lifting, LCA, min on path}
+\inputminted[breaklines]{cpp}{Graph algorithms/binary lifting + lca + min on path.cpp}
+\subsection{LCA with RMQ}
+\inputminted[breaklines]{cpp}{Graph algorithms/lca with rmq.cpp}
+\subsection{MST}
+\inputminted[breaklines]{cpp}{Graph algorithms/mst.cpp}
+\subsection{Rerooting}
+\inputminted[breaklines]{cpp}{Graph algorithms/rerooting.cpp}
+\subsection{Maximum matching on trees}
+\inputminted[breaklines]{cpp}{Graph algorithms/maximum matching on trees.cpp}
+\subsection{Maximum matching (Kuhn)}
+\inputminted[breaklines]{cpp}{Graph algorithms/kuhn (with optimizations).cpp}
+\subsection{Path cover, edge cover (Kuhn)}
+\inputminted[breaklines]{cpp}{Graph algorithms/path cover + edge cover (kuhn).cpp}
+\subsection{2"=SAT}
+\inputminted[breaklines]{cpp}{Graph algorithms/2-sat.cpp}
+\subsection{Flows}
+\inputminted[breaklines]{python}{Graph algorithms/flows.py}
+
+\section{SQRT heuristics}
+\subsection{Sqrt decomposition}
+\inputminted[breaklines]{python}{SQRT heuristics/sqrt decomposition.py}
+\subsection{Query decomposition}
+\inputminted[breaklines]{cpp}{SQRT heuristics/query decomposition.cpp}
+\subsection{Mo's algorithm}
+\inputminted[breaklines]{cpp}{SQRT heuristics/mo's algorithm.cpp}
+
+\section{DP}
+\subsection{LIS}
+\inputminted[breaklines]{cpp}{DP/lis.cpp}
+\subsection{LCS}
+\inputminted[breaklines]{python}{DP/lcs.py}
+\subsection{Sums with certificate}
+\inputminted[breaklines]{python}{DP/sums with certificate.py}
+\subsection{Log trick}
+\inputminted[breaklines]{cpp}{DP/log-trick.cpp}
+\subsection{Bitset optimization}
+\inputminted[breaklines]{cpp}{DP/bitset optimization.cpp}
+\subsection{Matrix optimization}
+\inputminted[breaklines]{cpp}{DP/matrix optimization.cpp}
+\subsection{Meet"=in"=the"=middle}
+\inputminted[breaklines]{cpp}{DP/meet-in-the-middle.cpp}
+\subsection{SOS DP}
+\inputminted[breaklines]{cpp}{DP/sos-dp.cpp}
+\subsection{Fence}
+\inputminted[breaklines]{cpp}{DP/fence.cpp}
+
+\section{Permutations}
+\subsection{Inversions (merge sort)}
+\inputminted[breaklines]{cpp}{Permutations/inversions.cpp}
+\subsection{K"=th permutation}
+\inputminted[breaklines]{cpp}{Permutations/k-th permutation.cpp}
+\subsection{Permutation index}
+\inputminted[breaklines]{python}{Permutations/permutation number.py}
+\subsection{Permutation cycles}
+\inputminted[breaklines]{cpp}{Permutations/permutation cycles.cpp}
+
+\section{Maths}
+\subsection{Modular arithmetics}
+\inputminted[breaklines]{cpp}{Maths/modular arithmetics.cpp}
+\subsection{CRT}
+\inputminted[breaklines]{python}{Maths/crt.py}
+\subsection{The ultimate geometry template}
+\inputminted[breaklines]{python}{Maths/geometry.py}
+\subsection{FFT}
+\inputminted[breaklines]{python}{Maths/fft.py}
+\subsection{Eratosphenes sieve}
+\inputminted[breaklines]{cpp}{Maths/sieve.cpp}
+
+\section{Other algorithms}
+\subsection{XOR hashing}
+\inputminted[breaklines]{cpp}{Other algorithms/xor-hashing.cpp}
+\subsection{Coordinate compression}
+\inputminted[breaklines]{cpp}{Other algorithms/coordinate compression.cpp}
+\subsection{Real"=number binary search}
+\inputminted[breaklines]{cpp}{Other algorithms/float binsearch.cpp}
+\subsection{Sprague"=grundy}
+\inputminted[breaklines]{cpp}{Other algorithms/sprague-grundy.cpp}
+Функция Гранди для комбинации игр = XOR-сумма функций Гранди для каждой из игр.\\
+XOR-сумма = 0 $\Rightarrow$ выигрывает 2ой игрок\\
+XOR-сумма $\ne 0 \Rightarrow$ выигрывает 1ый игрок.\\
+
+\section{Formulas}
+\input{formulas.txt}
+
+\end{document}
+
