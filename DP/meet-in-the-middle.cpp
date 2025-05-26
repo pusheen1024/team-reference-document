@@ -11,10 +11,6 @@ vector<int> sums(vector<int> &a) {
     return s;
 }
 void solve() {
-    int n;
-    cin >> n >> M;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) cin >> a[i];
     int k = n / 2;
     vector<int> left(a.begin(), a.begin() + k);
     vector<int> right(a.begin() + k, a.end());
@@ -26,5 +22,4 @@ void solve() {
         if (j > 0) ans = max(ans, add(lsm[i], rsm[j - 1]));
         ans = max(ans, add(lsm[i], rsm.back()));
     }
-    cout << ans << '\n';
 }

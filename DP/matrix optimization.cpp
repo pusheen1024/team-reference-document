@@ -49,7 +49,7 @@ mtx binpow(const mtx &a, li n) {
     }
     return ans;
 }
-void solve() { // n-th fibonacci number
+void solve() { // n-ное число Фибоначчи
     li n;
     cin >> n;
     mtx T;

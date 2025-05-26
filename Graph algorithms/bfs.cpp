@@ -1,4 +1,3 @@
-vector<int> bfs(int s) {
 vector<int> d(n, INF);
 queue<int> q;
 q.push(s);

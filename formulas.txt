@@ -1,12 +1,13 @@
-Линейность матожидания: $M(x_1 + x_2 + \dots + x_n) = M(x_1) + M(x_2) + \dots + M(x_n)$ \\
-\subsection{Суммы последовательностей}
+Линейность матожидания: $M(x_1 + x_2 + \dots + x_n) = M(x_1) + M(x_2) + \dots + M(x_n)$
+\subsection{Sequence sums}
 Сумма геометрической прогрессии: $S_n = \frac{b_1 (1 - q^n)}{1 - q}$ \\
 Сумма бесконечно убывающей геометрической прогрессии: $S = \frac{b_1}{1 - q}$ \\
 Сумма арифметической прогрессии: $S_n = \frac{a_1 + a_n}{2} \cdot n = \frac{2a_1 + d(n - 1)}{2} \cdot n$ \\
 $1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n(n(n + 1)(2n + 1)}{6}$ \\
 $1^3 + 2^3 + 3^3 + \dots + n^3 = \frac{n^2 (n + 1)^2}{4}$ \\
-\subsection{Матанализ}
-Площадь криволинейного сектора: $\mu(F) = \frac{1}{2} \int_{\alpha}^{\beta} r^2(\varphi) d\varphi$ \\
+\subsection{Calculus}
+Площадь криволинейного сектора:\\
+$\mu(F) = \frac{1}{2} \int_{\alpha}^{\beta} r^2(\varphi) d\varphi$ \\\\
 Интегралы:
 \begin{enumerate}
 	\item $ \int \sqrt{a^2 - x^2} dx = \frac{x}{2} \sqrt{a^2 - x^2} + \frac{a^2}{2} arcsin \frac{x}{a} + C $ \\
@@ -18,7 +19,7 @@ $1^3 + 2^3 + 3^3 + \dots + n^3 = \frac{n^2 (n + 1)^2}{4}$ \\
 	\item $ \int \frac{dx}{\sqrt{x^2 \pm a^2}} = ln |x + \sqrt{x^2 \pm a^2}| + C $ \\
 	\item $ \int \frac{x dx}{\sqrt{a^2 \pm x^2}} = \pm \sqrt{a^2 \pm x^2} + C $ \\
 \end{enumerate}
-\subsection{Комбинаторика}
+\subsection{Combinatorics}
 Размещения: 
 \begin{itemize}
 	\item Без повторений: $A_n^k = \frac{n!}{(n - k)!} $

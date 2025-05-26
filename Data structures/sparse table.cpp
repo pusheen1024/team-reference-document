@@ -1,7 +1,8 @@
 int T[lg][N];
 void build(vector<int> &a) {
     int n = a.size();
-    for (int i = 0; i < n; i++) T[0][i] = a[i];
+    for (int i = 0; i < n; i++)
+        T[0][i] = a[i];
     for (int i = 1; i < lg; i++) {
         int len = 1 << (i - 1);
         for (int j = 0; j + (len << 1) <= n; j++) {

@@ -83,7 +83,7 @@ class Segment:
         if not self.line.belongs(point):
             return False
         return (min(self.a.x, self.b.x) - EPS <= point.x <= max(self.a.x, self.b.x) + EPS and
-                        min(self.a.y, self.b.y) - EPS <= point.y <= max(self.a.y, self.b.y) + EPS)
+                min(self.a.y, self.b.y) - EPS <= point.y <= max(self.a.y, self.b.y) + EPS)
  
     def dist(self, point):
         if Vector(self.a, self.b) ** Vector(self.a, point) < 0:
@@ -97,7 +97,7 @@ class Segment:
                 other.line.side(self.a) * other.line.side(self.b) < 0):
             return 0
         return min(self.dist(other.a), self.dist(other.b),
-                             other.dist(self.a), other.dist(self.b))
+                   other.dist(self.a), other.dist(self.b))
     
     def intersects(self, line):
         point = intersects(self.line, line)
@@ -178,7 +178,8 @@ def intersects_c_l(circle, line, dx, dy):
 def intersects_c_c(circle1, circle2):
     circle2.x -= circle1.x
     circle2.y -= circle1.y
-    line = LineCoeff(2 * circle2.x, 2 * circle2.y, circle2.r ** 2 - circle1.r ** 2 - circle2.x ** 2 - circle2.y ** 2)
+    line = LineCoeff(2 * circle2.x, 2 * circle2.y,
+                     circle2.r ** 2 - circle1.r ** 2 - circle2.x ** 2 - circle2.y ** 2)
     ans = intersects_c_l(Circle(0, 0, circle1.r), line, circle1.x, circle1.y)
     circle2.x += circle1.x
     circle2.y += circle1.y
