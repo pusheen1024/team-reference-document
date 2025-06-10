@@ -7,7 +7,7 @@ vector<int> merge_sort(int l, int r, li &inv) {
     int j = 0;
     vector<int> res;
     while (i < left.size() && j < right.size()) {
-        if (left[i] < right[j]) {
+        if (left[i] <= right[j]) {
             inv += j;
             res.pb(left[i++]);
         }
