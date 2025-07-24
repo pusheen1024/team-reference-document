@@ -6,4 +6,5 @@
 *.out
 *.fdb_latexmk
 *.dvi
+*.pdf
 _minted
