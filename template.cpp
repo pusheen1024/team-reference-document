@@ -21,6 +21,9 @@
 #include <cassert>
 
 #define pb push_back
+#define mp make_pair
+#define x first
+#define y second
 
 using namespace std;
 
@@ -31,8 +34,12 @@ typedef pair<int, int> ptt;
 //ifstream in("input.in");
 //ofstream out("output.out");
 
+mt19937 rnd(time(NULL));
+
 const int INF = 1e9;
+const li INF64 = 1e18;
 const int M = 998244353;
+const int M1 = 1e9 + 7;
 
 void solve() {
 }
