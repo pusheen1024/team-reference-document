@@ -50,7 +50,7 @@ void edge_cover() {
     for (int i = 0; i < N; i++) {
         if (mt[i] != -1) {
             kl++;
-            mec.push_back(make_pair(mt[i] + 1, i + 1));
+            mec.push_back({mt[i] + 1, i + 1});
             cov_l[mt[i]] = true;
             cov_r[i] = true;
         }
@@ -58,7 +58,7 @@ void edge_cover() {
     for (int i = 0; i < n; i++) {
         if (!cov_l[i]) {
             if (g[i].size() > 0) {
-                mec.push_back(make_pair(i + 1, g[i].front() + 1));
+		mec.push_back({i + 1, g[i].front() + 1});
                 kl++;
             }
         }
@@ -66,7 +66,7 @@ void edge_cover() {
     for (int i = 0; i < m; i++) {
         if (!cov_r[i]) {
             if (g1[i].size() > 0) {
-                mec.push_back(make_pair(g1[i].front() + 1, i + 1));
+                mec.push_back({g1[i].front() + 1, i + 1});
                 kl++;
             }
         }

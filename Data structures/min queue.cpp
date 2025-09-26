@@ -43,7 +43,6 @@ struct minQ {
   }
 };
 
-
 struct venS {
   set<li> s;
   li d;
