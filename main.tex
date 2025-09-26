@@ -14,6 +14,8 @@
 \inputminted[breaklines]{cpp}{Data structures/treap (as a binsearch tree).cpp}
 \subsection{Segment tree}
 \inputminted[breaklines]{cpp}{Data structures/segment tree.cpp}
+\subsection{Segment tree with segment updates}
+\inputminted[breaklines]{cpp}{Data structures/segment tree with segment updates.cpp}
 \subsection{Merge sort tree}
 \inputminted[breaklines]{cpp}{Data structures/mergesort tree.cpp}
 \subsection{Sparse table}
@@ -50,7 +52,7 @@
 \inputminted[breaklines]{cpp}{Graph algorithms/floyd.cpp}
 \subsection{Ford"=Bellman}
 \inputminted[breaklines]{python}{Graph algorithms/ford-bellman.py}
-После n"=ной итерации что"=то изменилось $\Rightarrow$\\
+После n"=ной итерации что"=то изменилось $\Rightarrow$ \\
 существует цикл отрицательного веса.
 \subsection{Cycle in directed graph}
 \inputminted[breaklines]{cpp}{Graph algorithms/cycle in directed graph.cpp}
@@ -126,9 +128,9 @@
 \inputminted[breaklines]{cpp}{Permutations/permutation cycles.cpp}
 \subsection{Number of operations to sort a permutation}
 \begin{itemize}
-\item Swap two neighbouring elements "--- number of inversions;
-\item Swap any two elements "--- n minus number of cycles;
-\item Insert any element on another position "--- n minus LIS length;
+\item Разрешено менять местами 2 соседних элемента "--- количество инверсий;
+\item Разрешено менять местами 2 любых элемента "--- n минус количество циклов в перестановке;
+\item Разрешено вставить любой элемент на другую позицию "--- n минус длина НВП;
 \end{itemize}
 
 \section{Maths}
@@ -162,8 +164,11 @@
 \inputminted[breaklines]{cpp}{Other algorithms/parallel binsearch.cpp}
 \subsection{Sprague"=Grundy}
 \inputminted[breaklines]{cpp}{Other algorithms/sprague-grundy.cpp}
-Функция Гранди для комбинации игр = XOR-сумма функций Гранди для каждой из игр.\\
-XOR-сумма = 0 $\Rightarrow$ выигрывает 2ой игрок\\
+
+Функция Гранди для комбинации игр = XOR-сумма функций Гранди для каждой из игр.
+
+XOR-сумма = 0 $\Rightarrow$ выигрывает 2ой игрок.
+
 XOR-сумма $\ne 0 \Rightarrow$ выигрывает 1ый игрок.
 
 \section{Important formulas}

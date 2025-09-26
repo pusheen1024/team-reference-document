@@ -135,11 +135,12 @@ def dist(point1, point2):
     return ((point2.x - point1.x) ** 2 + (point2.y - point1.y) ** 2) ** 0.5
  
 def cw(a, b, c):
-    return Vector(b, a) * Vector(b, c) < 0
+    return Vector(b, a) * Vector(b, c) <= 0
  
 def ccw(a, b, c):
-    return Vector(b, a) * Vector(b, c) > 0
- 
+    return Vector(b, a) * Vector(b, c) >= 0
+
+# выпуклая оболочка без точек на сторонах
 def convex_hull(points):
     p = sorted(points)
     n = len(points)
@@ -148,7 +149,7 @@ def convex_hull(points):
     up.append(p[0])
     down.append(p[0])
     for i in range(1, n):
-        if i == n - 1 or not cw(p[n - 1], p[0], p[i]):
+        if i == n - 1 or ccw(p[n - 1], p[0], p[i]):
             while len(up) >= 2 and not ccw(up[len(up) - 2], up[len(up) - 1], p[i]):
                 up.pop()
             up.append(p[i])
@@ -157,6 +158,45 @@ def convex_hull(points):
                 down.pop()
             down.append(p[i])
     return down + up[1:-1][::-1]
+ 
+def cw_1(a, b, c):
+    return Vector(b, a) * Vector(b, c) < 0
+ 
+def ccw_1(a, b, c):
+    return Vector(b, a) * Vector(b, c) > 0
+
+# выпуклая оболочка с точками на сторонах
+def convex_hull(points):
+    p = sorted(points)
+    n = len(points)
+    up = list()
+    down = list()
+    up.append(p[0])
+    down.append(p[0])
+    for i in range(1, n):
+        if i == n - 1 or not cw_1(p[n - 1], p[0], p[i]):
+            while len(up) >= 2 and not ccw_1(up[len(up) - 2], up[len(up) - 1], p[i]):
+                up.pop()
+            up.append(p[i])
+        if i == n - 1 or cw_1(p[n - 1], p[0], p[i]):
+            while len(down) >= 2 and not cw_1(down[len(down) - 2], down[len(down) - 1], p[i]):
+                down.pop()
+            down.append(p[i])
+    return down + up[1:-1][::-1]
+ 
+# точки в порядке обхода против часовой стрелки.
+# начинаем с самой левой из самых нижних точек
+def get(c):
+    mn = min(c, key=lambda x: (x[1], x[0]))
+    idx = c.index(mn)
+    ans = [str(len(c))]
+    for i in range(idx, len(c)):
+        pt = c[i]
+        ans.append(f'{pt[0]} {pt[1]}')
+    for i in range(idx):
+        pt = c[i]
+        ans.append(f'{pt[0]} {pt[1]}')
+    return ans
  
 def intersects_c_l(circle, line, dx, dy):
     sq = line.a ** 2 + line.b ** 2
