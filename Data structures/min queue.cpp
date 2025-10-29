@@ -19,46 +19,42 @@ struct minS {
 };
 
 struct minQ {
-  min head;
-  xorS tail;
+    minS head;
+    minS tail;
 
-  void fix() {
-    if (head.empty()) {
-      while (!tail.empty()) head.push(tail.pop());
+    void fix() {
+        if (head.empty()) {
+            while (!tail.empty()) head.push(tail.pop());
+        }
     }
-  }
-
-  void push(int x) {
-    tail.push(x);
-  }
-
-  void pop() {
-    fix();
-    if (!head.empty())
-      head.pop();
-  }
-
-  int get() {
-    return (tail.get() | head.get());
-  }
+    void push(int x) {
+        tail.push(x);
+    }
+    void pop() {
+        fix();
+        if (!head.empty()) head.pop();
+    }
+    int get() {
+        return min(tail.get(), head.get());
+    }
 };
 
 struct venS {
-  set<li> s;
-  li d;
-  venS() {
-    d = 0;
-  }
-  void insert(int x) {
-    s.insert(x - d);
-  }
-  void erase(int x) {
-    s.erase(x - d);
-  }
-  bool check(int x) {
-    return (s.find(x - d) != s.end());
-  }
-  void inc(int y) {
-    d += y;
-  }
+    set<li> s;
+    li d;
+    venS() {
+        d = 0;
+    }
+    void insert(int x) {
+        s.insert(x - d);
+    }
+    void erase(int x) {
+        s.erase(x - d);
+    }
+    bool check(int x) {
+        return (s.find(x - d) != s.end());
+    }
+    void inc(int y) {
+        d += y;
+    }
 };
