@@ -17,11 +17,9 @@ struct minS {
         return x;
     }
 };
-
 struct minQ {
     minS head;
     minS tail;
-
     void fix() {
         if (head.empty()) {
             while (!tail.empty()) head.push(tail.pop());
@@ -38,7 +36,6 @@ struct minQ {
         return min(tail.get(), head.get());
     }
 };
-
 struct venS {
     set<li> s;
     li d;

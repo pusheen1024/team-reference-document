@@ -14,12 +14,8 @@
 \inputminted[breaklines]{cpp}{Data structures/treap (as a binsearch tree).cpp}
 \subsection{Segment tree}
 \inputminted[breaklines]{cpp}{Data structures/segment tree.cpp}
-\subsection{Merge sort tree}
-\inputminted[breaklines]{cpp}{Data structures/mergesort tree.cpp}
 \subsection{Sparse table}
 \inputminted[breaklines]{cpp}{Data structures/sparse table.cpp}
-\subsection{DSU}
-\inputminted[breaklines]{cpp}{Data structures/dsu.cpp}
 \subsection{Min queue}
 \inputminted[breaklines]{cpp}{Data structures/min queue.cpp}
 \subsection{PBDS}
@@ -35,21 +31,15 @@
 \subsection{KMP}
 \inputminted[breaklines]{python}{String algorithms/kmp.py}
 \subsection{Prefix function}
-\inputminted[breaklines]{python}{String algorithms/prefix-function.py}
+\inputminted[breaklines]{cpp}{String algorithms/prefix-function.cpp}
 \subsection{Z"=function}
-\inputminted[breaklines]{python}{String algorithms/z-function.py}
+\inputminted[breaklines]{cpp}{String algorithms/z-function.cpp}
+\subsection{Manacher}
+\inputminted[breaklines]{cpp}{String algorithms/manacher.cpp}
 
 \section{Graph algorithms}
 \subsection{0-1 BFS}
 \inputminted[breaklines]{cpp}{Graph algorithms/0-1 bfs.cpp}
-\subsection{Floyd}
-\inputminted[breaklines]{cpp}{Graph algorithms/floyd.cpp}
-\subsection{Ford"=Bellman}
-\inputminted[breaklines]{python}{Graph algorithms/ford-bellman.py}
-После n"=ной итерации что"=то изменилось $\Rightarrow$ \\
-существует цикл отрицательного веса.
-\subsection{Cycle in directed graph}
-\inputminted[breaklines]{cpp}{Graph algorithms/cycle in directed graph.cpp}
 \subsection{Strongly connected components}
 \inputminted[breaklines]{cpp}{Graph algorithms/strongly connected components.cpp}
 \subsection{Bridges}
@@ -64,8 +54,6 @@
 \inputminted[breaklines]{cpp}{Graph algorithms/lca with rmq.cpp}
 \subsection{Virtual tree}
 \inputminted[breaklines]{cpp}{Graph algorithms/virtual tree.cpp}
-\subsection{MST}
-\inputminted[breaklines]{cpp}{Graph algorithms/mst.cpp}
 \subsection{Rerooting}
 \inputminted[breaklines]{cpp}{Graph algorithms/rerooting.cpp}
 \subsection{Maximum matching on trees}
@@ -94,10 +82,6 @@
 \inputminted[breaklines]{cpp}{DP/lis.cpp}
 \subsection{LIS with certificate}
 \inputminted[breaklines]{cpp}{DP/lis with certificate.cpp}
-\subsection{LCS}
-\inputminted[breaklines]{python}{DP/lcs.py}
-\subsection{Sums with certificate}
-\inputminted[breaklines]{python}{DP/sums with certificate.py}
 \subsection{Log trick}
 \inputminted[breaklines]{cpp}{DP/log-trick.cpp}
 \subsection{Bitset optimization}
@@ -133,6 +117,8 @@
 \subsection{Modular arithmetics}
 \inputminted[breaklines]{cpp}{Maths/modular arithmetics.cpp}
 Пусть нужно вычислить $a^b$ по модулю, причём показатель степени не влезает в long long. Тогда $b$ вычисляется по модулю $M - 1$, а $a^b$ "--- уже по модулю $M$.
+\subsection{Gauss}
+\inputminted[breaklines]{cpp}{Maths/gauss.cpp}
 \subsection{CRT}
 \inputminted[breaklines]{python}{Maths/crt.py}
 \subsection{The ultimate geometry template}
@@ -158,14 +144,13 @@ $(x, y) \rightarrow (x \cdot cos(\alpha) + y \cdot sin(\alpha), y \cdot cos(\alp
 \subsection{Sprague"=Grundy}
 \inputminted[breaklines]{cpp}{Other algorithms/sprague-grundy.cpp}
 
-Функция Гранди для комбинации игр = XOR-сумма функций Гранди для каждой из игр.
+Функция Гранди для комбинации игр = XOR"=сумма функций Гранди для каждой из игр.
 
-XOR-сумма = 0 $\Rightarrow$ выигрывает 2ой игрок.
+XOR"=сумма = 0 $\Rightarrow$ выигрывает 2ой игрок.
 
-XOR-сумма $\ne 0 \Rightarrow$ выигрывает 1ый игрок.
+XOR"=сумма $\ne 0 \Rightarrow$ выигрывает 1ый игрок.
 
 \section{Important formulas}
 \input{formulas.txt}
 
 \end{document}
-

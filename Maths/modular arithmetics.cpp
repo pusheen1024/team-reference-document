@@ -1,28 +1,3 @@
-int add(int x, int y) {
-	x += y;
-	while (x >= M) x -= M;
-	while (x < 0) x += M;
-	return x;
-}
-int mul(int x, int y) {
-    return (x * 1ll * y) % M;
-}
-int mod_pow(int base, int n) {
-	int ans = 1;
-	while (n != 0) {
-		if (n & 1) ans = mul(ans, base);
-		n >>= 1;
-		base = mul(base, base);
-	}
-	return ans;
-}
-int gcd_(li x, li y) {
-	while (x != 0 && y != 0) {
-		if (x > y) swap(x, y);
-		y = y % x;
-	}
-	return x + y;
-}
 int exgcd(int a, int b, li& x1, li& y1) {
 	if (b == 0) {
 		x1 = 1;
