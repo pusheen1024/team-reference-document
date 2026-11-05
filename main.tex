@@ -4,16 +4,18 @@
 \begin{document}
 \pagestyle{fancy}
 \fancyfoot{}
-\fancyhead[L]{Saratov State University: idk}
+\fancyhead[L]{Saratov State University: The Vices (Kirnosov, Rodin, Potapkina)}
 \fancyhead[R]{\thepage}
 
 \section{Data structures}
-\subsection{Treap (with segment updates)}
+\subsection{Treap}
+\inputminted[breaklines]{cpp}{Data structures/treap.cpp}
+\subsection{Treap with segment updates}
 \inputminted[breaklines]{cpp}{Data structures/treap (segment updates).cpp}
-\subsection{Treap (as a binary search tree)}
-\inputminted[breaklines]{cpp}{Data structures/treap (as a binsearch tree).cpp}
 \subsection{Segment tree}
 \inputminted[breaklines]{cpp}{Data structures/segment tree.cpp}
+\subsection{Persistent segment tree}
+\inputminted[breaklines]{cpp}{Data structures/persistent segment tree.cpp}
 \subsection{Sparse table}
 \inputminted[breaklines]{cpp}{Data structures/sparse table.cpp}
 \subsection{Min queue}
@@ -26,6 +28,8 @@
 \inputminted[breaklines]{cpp}{String algorithms/trie.cpp}
 \subsection{Suffix array}
 \inputminted[breaklines]{cpp}{String algorithms/suffix array.cpp}
+\subsection{Aho-Corasick}
+\inputminted[breaklines]{cpp}{String algorithms/aho-corasick.cpp}
 \subsection{String hashing}
 \inputminted[breaklines]{cpp}{String algorithms/string hashing.cpp}
 \subsection{KMP}
@@ -70,28 +74,26 @@
 \inputminted[breaklines]{cpp}{Graph algorithms/dcp.cpp}
 
 \section{SQRT heuristics}
-\subsection{Sqrt decomposition}
-\inputminted[breaklines]{python}{SQRT heuristics/sqrt decomposition.py}
 \subsection{Query decomposition}
 \inputminted[breaklines]{cpp}{SQRT heuristics/query decomposition.cpp}
 \subsection{Mo's algorithm}
 \inputminted[breaklines]{cpp}{SQRT heuristics/mo's algorithm.cpp}
 
 \section{DP}
-\subsection{LIS}
-\inputminted[breaklines]{cpp}{DP/lis.cpp}
+\subsection{Li Chao}
+\inputminted[breaklines]{cpp}{DP/Li Chao.cpp}
 \subsection{LIS with certificate}
 \inputminted[breaklines]{cpp}{DP/lis with certificate.cpp}
 \subsection{Log trick}
 \inputminted[breaklines]{cpp}{DP/log-trick.cpp}
-\subsection{Bitset optimization}
+\subsection{Bitsets}
 \inputminted[breaklines]{cpp}{DP/bitset optimization.cpp}
-\subsection{Matrix optimization}
-\inputminted[breaklines]{cpp}{DP/matrix optimization.cpp}
 \subsection{Meet"=in"=the"=middle}
 \inputminted[breaklines]{cpp}{DP/meet-in-the-middle.cpp}
 \subsection{SOS DP}
 \inputminted[breaklines]{cpp}{DP/sos-dp.cpp}
+\subsection{XOR"=convolution}
+\inputminted[breaklines]{cpp}{DP/hadamard.cpp}
 \subsection{Digit DP}
 \inputminted[breaklines]{cpp}{DP/digit dp.cpp}
 \subsection{Fence}
@@ -105,7 +107,7 @@
 \subsection{Permutation index}
 \inputminted[breaklines]{python}{Permutations/permutation number.py}
 \subsection{Permutation cycles}
-\inputminted[breaklines]{cpp}{Permutations/permutation cycles.cpp}
+\inputminted[breaklines]{go}{Permutations/permutation cycles.go}
 \subsection{Number of operations to sort a permutation}
 \begin{itemize}
 \item Разрешено менять местами 2 соседних элемента "--- количество инверсий;
@@ -113,30 +115,40 @@
 \item Разрешено вставить любой элемент на другую позицию "--- N минус длина НВП;
 \end{itemize}
 
-\section{Maths}
-\subsection{Modular arithmetics}
-\inputminted[breaklines]{cpp}{Maths/modular arithmetics.cpp}
+\section{Number theory}
+\subsection{Modular arithemtics}
+\inputminted[breaklines]{cpp}{Number theory/exgcd.cpp}
 Пусть нужно вычислить $a^b$ по модулю, причём показатель степени не влезает в long long. Тогда $b$ вычисляется по модулю $M - 1$, а $a^b$ "--- уже по модулю $M$.
+\subsection{CRT}
+\inputminted[breaklines]{python}{Number theory/crt.py}
+\subsection{Segmented sieve}
+\inputminted[breaklines]{cpp}{Number theory/segmented sieve.cpp}
+\subsection{Phi and Mobius functions}
+\inputminted[breaklines]{cpp}{Number theory/mobius.cpp}
+\subsection{FFT}
+\inputminted[breaklines]{cpp}{Number theory/fft.cpp}
+\subsection{NTT}
+\inputminted[breaklines]{cpp}{Number theory/ntt.cpp}
+
+\section{Maths}
 \subsection{Gauss}
 \inputminted[breaklines]{cpp}{Maths/gauss.cpp}
-\subsection{CRT}
-\inputminted[breaklines]{python}{Maths/crt.py}
+\subsection{Tridiagonal matrix algorithm}
+\inputminted[breaklines]{cpp}{Maths/tridiagonal.cpp}
+\subsection{Burnside Lemma}
+\input{Maths/burnside.tex}
 \subsection{The ultimate geometry template}
 \inputminted[breaklines]{python}{Maths/geometry.py}
 Повернуть систему координат на угол $\alpha$:\\
 $(x, y) \rightarrow (x \cdot cos(\alpha) + y \cdot sin(\alpha), y \cdot cos(\alpha) - x \cdot sin(\alpha))$
-\subsection{FFT}
-\inputminted[breaklines]{python}{Maths/fft.cpp}
-\subsection{Segmented sieve}
-\inputminted[breaklines]{cpp}{Maths/segmented sieve.cpp}
-\subsection{Mobius function}
-\inputminted[breaklines]{cpp}{Maths/mobius.cpp}
 
 \section{Other algorithms}
 \subsection{XOR hashing}
 \inputminted[breaklines]{cpp}{Other algorithms/xor-hashing.cpp}
 \subsection{XOR-basis}
 \inputminted[breaklines]{cpp}{Other algorithms/xor-basis.cpp}
+\subsection{Submasks in 3\^n}
+\inputminted[breaklines]{cpp}{Other algorithms/submasks.cpp}
 \subsection{Construction with no more than k equal elements next to each other}
 \inputminted[breaklines]{cpp}{Other algorithms/no equal neighbours.cpp}
 \subsection{Parallel binary search}
