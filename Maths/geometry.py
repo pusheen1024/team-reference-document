@@ -1,90 +1,13 @@
-from functools import total_ordering
-from math import atan2, pi
-EPS = 10 ** (-9)
-
-@total_ordering
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
- 
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
- 
-    def __lt__(self, other):
-        return self.x < other.x or self.x == other.x and self.y < other.y
- 
-    def __repr__(self):
-        return f'{self.x} {self.y}'
-  
 class Line:
     def __init__(self, a, b):
         self.a = a.y - b.y
         self.b = b.x - a.x
         self.c = -self.a * a.x - self.b * a.y
  
-    def belongs(self, point):
-        return abs(self.side(point)) < EPS
- 
-    def side(self, point):
-        return point.x * self.a + point.y * self.b + self.c
- 
     def dist(self, point):
         return abs(self.a * point.x + self.b * point.y + self.c) / ((self.a ** 2 + self.b ** 2) ** 0.5)
- 
-class LineCoeff(Line):
-    def __init__(self, a, b, c):
-        self.a = a
-        self.b = b
-        self.c = c        
-        
-@total_ordering
-class Vector:
-    def __init__(self, a, b):
-        self.x = b.x - a.x
-        self.y = b.y - a.y
-        self.a = a
-        self.b = b
- 
-    def __mul__(self, other):
-        return self.x * other.y - self.y * other.x
- 
-    def __pow__(self, other):
-        return self.x * other.x + self.y * other.y
- 
-    def __lt__(self, other):
-        return self * other < 0
- 
-    def __eq__(self, other):
-        return self * other == 0
- 
-    def __str__(self):
-        return f'{self.x} {self.y}'
- 
-    def __repr__(self):
-        return f'{self.x} {self.y}'
-    
-    def polar(self):
-        ans = atan2(self.y, self.x)
-        if ans < 0:
-            ans += 2 * pi
-        return ans
- 
-    def length(self):
-        return (self.x ** 2 + self.y ** 2) ** 0.5
- 
+         
 class Segment:
-    def __init__(self, a, b):
-        self.line = Line(a, b)
-        self.a = a
-        self.b = b
- 
-    def belongs(self, point):
-        if not self.line.belongs(point):
-            return False
-        return (min(self.a.x, self.b.x) - EPS <= point.x <= max(self.a.x, self.b.x) + EPS and
-                min(self.a.y, self.b.y) - EPS <= point.y <= max(self.a.y, self.b.y) + EPS)
- 
     def dist(self, point):
         if Vector(self.a, self.b) ** Vector(self.a, point) < 0:
             return dist(point, self.a)
@@ -106,17 +29,6 @@ class Segment:
         return False
  
 class Circle:
-    def __init__(self, x, y, r):
-        self.x = x
-        self.y = y
-        self.r = r
- 
-    def __repr__(self):
-        return f'{self.x} {self.y} {self.r}'
- 
-    def belongs(self, p):
-        return (self.x - p.x) ** 2 + (self.y - p.y) ** 2 <= self.r ** 2 + EPS
- 
     def inside(self, circle):
         return (self.x - circle.x) ** 2 + (self.y - circle.y) ** 2 <= (self.r - circle.r) ** 2 + EPS 
  
@@ -130,9 +42,6 @@ def intersects(line1, line2):
     D1 = det(line1.c, line1.b, line2.c, line2.b)
     D2 = det(line1.a, line1.c, line2.a, line2.c)
     return Point(-D1 / D, -D2 / D)
- 
-def dist(point1, point2):
-    return ((point2.x - point1.x) ** 2 + (point2.y - point1.y) ** 2) ** 0.5
  
 def cw(a, b, c):
     return Vector(b, a) * Vector(b, c) <= 0
